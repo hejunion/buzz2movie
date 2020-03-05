@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Feeds
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+   <ion-list lines="none">
+      <ion-item *ngFor="let a of articles; let i = index">
+          <ion-card>
+            <ion-card-header>
+                <ion-row>
+                    <!-- Release date-->
+                    <ion-col size="3" calss="data-label">
+                        <ion-row class="date-label-day"> {{ a.Released | date:'dd MMM yyyy' }} </ion-row>
+                    </ion-col> 
+                    <!-- Title-->
+                    <ion-col size="9" >
+                        <ion-row>
+                           <ion-card-title>{{a.Title}}</ion-card-title>
+                        </ion-row>
+                        <ion-row>
+                            <ion-card-subtitle>{{a.Plot}}</ion-card-subtitle>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-card-header>
+            <ion-img [src]="a.poster"></ion-img>
+            <ion-card-content>
+               <p>Story written by {{a.Writer}}</p>
+            </ion-card-content>
+        </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

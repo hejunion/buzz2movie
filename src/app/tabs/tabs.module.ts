@@ -16,4 +16,12 @@ import { TabsPage } from './tabs.page';
   ],
   declarations: [TabsPage]
 })
-export class TabsPageModule {}
+export class TabsPageModule {
+  constructor(){
+    console.log('TODO.TabsPage.constructor');
+  }
+
+  logou(){
+    console.log('TODO.TabsPage.logout');
+  }
+}
